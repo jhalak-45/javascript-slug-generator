@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<body>
+<input type="text" id="title" onkeyup="generateSlug()" placeholder="Enter Title Here">
+<input type="text" id="slug" placeholder="Slug" readonly>
+<i class="bx bxs-edit" onclick="editSlug()"></i>
+<script>
+function generateSlug() {
+  var title = document.getElementById('title').value;
+  var slug = title.toLowerCase().replace(/[^a-zA-Z0-9]+/g,'-');
+  document.getElementById('slug').value = slug;
+}
+
+function editSlug() {
+  document.getElementById('slug').readOnly = false;
+  document.getElementById('slug').focus();
+}
+
+</script>
+
+</body>
+</html> 
